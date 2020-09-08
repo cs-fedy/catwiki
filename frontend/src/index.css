@@ -1,0 +1,129 @@
+/*=== used fonts ===*/
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans|Oswald|Raleway&display=swap');
+/* font-family: 'Lato', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Raleway', sans-serif; */
+
+/*=== colors var ===*/
+:root {
+    --black-color: #000;
+    --gun-metal: #2B2D42;
+    --bright-color: #edf6f9;
+    --white: #fff;
+}
+
+/*=== global settings ===*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--white);
+    font-family: 'Lato', sans-serif;
+    font-size: .9rem;
+    color: var(--gun-metal);
+}
+
+.container {
+    width: 96vw;
+    margin: 20px auto;
+}
+
+.title {
+    text-align: center;
+    margin: 10px auto;
+}
+
+.cats-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+li.cat-item {
+    margin: 0 10px 10px;
+    list-style: none;
+    background: var(--bright-color);
+    padding: 10px 20px;
+}
+
+h3.cat-name {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+p.cat-des {
+    font-size: 0.9em;
+}
+
+.search-form {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.cat-name-input {
+    padding: 10px 20px;
+    border: 1px solid #f1f1f1;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 1px solid #f1f1f1;
+    background: var(--gun-metal);
+    color: var(--bright-color);
+    border-radius: 7px;
+    margin: 0 2px;
+}
+
+.cats-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.cats-categories {
+    width: 200px;
+    font-size: 18px;
+    color: var(--gun-metal);
+    padding: 5px 10px;
+    margin: 0 4px;
+}
+
+.cat-image {
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .cats-list {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 900px) {
+    .cats-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media only screen and (min-width: 901px) and (max-width: 1200px) {
+    .cats-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .cats-form {
+        display: flex;
+        flex-direction: column;
+    }
+    .control {
+        margin-bottom: 10px;
+    }
+  }
