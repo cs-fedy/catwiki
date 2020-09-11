@@ -13,7 +13,7 @@ router.get("/breeds", async (req, res) => {
     const catsResult = await fetch(url);
     const cats = await catsResult.json();
     const formattedData = await Promise.all(formatData(cats));
-    return res.json({cats: formattedData})
+    return res.json({catsList: formattedData})
 });
 
 router.get("/breeds/:name", async (req, res) => {
@@ -25,7 +25,7 @@ router.get("/breeds/:name", async (req, res) => {
     const result = await fetch(url);
     const cats = await result.json();
     const formattedData = await Promise.all(formatData(cats));
-    return res.json({cats: formattedData})
+    return res.json({catsList: formattedData})
 });
 
 module.exports = router;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { CatsContext } from './CatsContext';
 import Cat from './Cat';
 
@@ -12,19 +12,15 @@ const RenderCats = ({ cats }) => {
                 des={description} 
                 imageURL={imageURL}
                 cfa={cfa_url} 
-                wiki={wikipedia_url}/>)}
+                wiki={wikipedia_url}/>
+            )}
         </ul>
     );
 }
 
 const Cats = () => {
-    return (
-        <CatsContext.Consumer>
-            {({ cats, catsByName, isBreedsMode }) => isBreedsMode?
-            <RenderCats cats={cats}/>:
-            <RenderCats cats={catsByName}/>}
-        </CatsContext.Consumer>
-    );
+    const { cats, catsByName, isBreedsMode } = useContext(CatsContext);
+    return isBreedsMode? <RenderCats cats={cats}/>: <RenderCats cats={catsByName}/>;
 }
 
 export default Cats;
